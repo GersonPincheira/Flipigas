@@ -1,0 +1,11 @@
+#ifndef SOLICITUD_H
+#define SOLICITUD_H
+#include <deque>
+
+class Solicitud
+{
+public:
+    Solicitud();
+};
+
+#endif // SOLICITUD_H
