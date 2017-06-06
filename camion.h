@@ -1,17 +1,17 @@
 #ifndef CAMION_H
 #define CAMION_H
-#include<cilindro.h>
-#include <deque>
-using namespace std;
+#include<solicitud.h>
+
 class Camion
 {
 private:
-    int tipo;
     int capacidad;
     bool reparto;
-    deque carga<Cilindro>;
+    string ubicacion;
+    deque <Solicitud>carga;
 public:
     Camion();
+    Camion(int capacidad,string ub);
 };
 
 #endif // CAMION_H

@@ -1,6 +1,5 @@
 #ifndef SOLICITUD_H
 #define SOLICITUD_H
-#include <deque>
 #include <cilindro.h>
 
 using namespace std;
@@ -9,8 +8,9 @@ class Solicitud
 {
 public:
     Solicitud();
+    void AgregarSolicitud(string tamannoC,int capacidadC,string tamannoNC,int capacidadNC);
 private:
-    deque pedidos<Cilindro>;
+    static deque <Cilindro>pedidos;
     string ubicacion;
     string MedioPago;
     int TotalPago;
