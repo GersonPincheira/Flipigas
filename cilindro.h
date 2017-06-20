@@ -2,6 +2,7 @@
 #define CILINDRO_H
 #include<iostream>
 #include<deque>
+#include <time.h>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ private:
 public:
     Cilindro();
     Cilindro(float k,string t);
+    int precio();
 };
 
 #endif // CILINDRO_H

@@ -8,9 +8,11 @@ class Solicitud
 {
 public:
     Solicitud();
-    Solicitud(deque<Cilindro> cilindros,string cerro,string modopago,string nombre_user,string rut,bool entregado,int id);
+    Solicitud(deque<Cilindro> cilindros,string cerro,string modopago,string nombre_user,string rut,bool entregado,int id,int p);
     ~Solicitud();
     int getID();
+    float getTiempoDeEntrega();
+
 private:    
     deque <Cilindro>pedidos;
     string ubicacion;

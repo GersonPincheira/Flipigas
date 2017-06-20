@@ -39,31 +39,43 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    deque <Cilindro>cilindros;
-    for(int i=0; i<ui->tableWidget->rowCount();i++){
-        QComboBox *tipo =(QComboBox*) ui->tableWidget->cellWidget(i,0);
-        QComboBox *tam = (QComboBox*) ui->tableWidget->cellWidget(i,1);
-        QSpinBox *cantidad =(QSpinBox*) ui->tableWidget->cellWidget(i,2);
-        string tipoDato = tipo->currentText().toLocal8Bit().constData();
-        string tamDato = tam->currentText().toLocal8Bit().constData();
-        string cantDato = cantidad->text().toLocal8Bit().constData();
-        for(int n=0; n<stoi(cantDato);n++){
-            Cilindro *h=new Cilindro(stoi(tamDato.substr(0,2)),tipoDato);
-            cilindros.push_back(*h);
+
+    string rut = ui->rut->text().toLocal8Bit().constData();
+    string nombre = ui->name_user->text().toLocal8Bit().constData();
+    string cerro = ui->cerros->currentText().toLocal8Bit().constData();
+    string pago = ui->Mcash->currentText().toLocal8Bit().constData();
+    if(nombre!="" && cerro!="Seleccione cerro" && pago!="Seleccione medio de pago"){
+        deque <Cilindro>cilindros;
+        int precio=0;
+        for(int i=0; i<ui->tableWidget->rowCount();i++){
+            QComboBox *tipo =(QComboBox*) ui->tableWidget->cellWidget(i,0);
+            QComboBox *tam = (QComboBox*) ui->tableWidget->cellWidget(i,1);
+            QSpinBox *cantidad =(QSpinBox*) ui->tableWidget->cellWidget(i,2);
+            string tipoDato = tipo->currentText().toLocal8Bit().constData();
+            string tamDato = tam->currentText().toLocal8Bit().constData();
+            string cantDato = cantidad->text().toLocal8Bit().constData();
+            for(int n=0; n<stoi(cantDato);n++){
+                Cilindro *h=new Cilindro(stoi(tamDato.substr(0,2)),tipoDato);
+                precio+=h->precio();
+                cilindros.push_back(*h);
+            }
         }
-        string rut = ui->rut->text().toLocal8Bit().constData();
-        string nombre = ui->name_user->text().toLocal8Bit().constData();
         string ID_venta = ui->id_venta->text().toLocal8Bit().constData();
-        string cerro = ui->cerros->currentText().toLocal8Bit().constData();
-        string pago = ui->Mcash->currentText().toLocal8Bit().constData();
-        Solicitud *s = new Solicitud(cilindros,cerro,pago,nombre,rut,0,stoi(ID_venta));
+        Solicitud *s = new Solicitud(cilindros,cerro,pago,nombre,rut,0,stoi(ID_venta),precio);
         solicitudes.push_back(*s);
         ui->id_venta->setText(QString::number(stoi(ID_venta)+1));
-
+        QMessageBox mensaje;
+        mensaje.setWindowTitle(" ");
+        mensaje.setText("Solicitud ingresada correctamente\n"
+                       "Total a pagar $"+QString::number(precio)+"\n"
+                       "Tiempo de espera estimado:"+QString::number(s->getTiempoDeEntrega())+" Minutos");
+        mensaje.exec();
+    }else{
+        QMessageBox Error;
+        Error.setText("Rellene bien los campos");
+        Error.setWindowTitle("Error");
+        Error.exec();
     }
-   QMessageBox mensaje;
-   mensaje.setText("solicitud ingresada satisfactoriamente!!!!");
-   mensaje.exec();
 
 }
 
