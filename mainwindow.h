@@ -2,6 +2,16 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableWidgetItem>
+#include <QStringList>
+#include <QMessageBox>
+#include <QComboBox>
+#include <QSpinBox>
+#include <string>
+#include <string.h>
+#include <camion.h>
+
+
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +27,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;

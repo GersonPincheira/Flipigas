@@ -8,13 +8,19 @@ class Solicitud
 {
 public:
     Solicitud();
-    void AgregarSolicitud(string tamannoC,int capacidadC,string tamannoNC,int capacidadNC);
-private:
-    static deque <Cilindro>pedidos;
+    Solicitud(deque<Cilindro> cilindros,string cerro,string modopago,string nombre_user,string rut,bool entregado,int id);
+    ~Solicitud();
+    int getID();
+private:    
+    deque <Cilindro>pedidos;
     string ubicacion;
     string MedioPago;
+    string user;
+    string data_user;
     int TotalPago;
     float TiempoDeEntrega;
+    bool flagEntregado;
+    int ID;
 };
 
 #endif // SOLICITUD_H

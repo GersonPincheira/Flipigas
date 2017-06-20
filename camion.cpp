@@ -2,7 +2,7 @@
 
 Camion::Camion()
 {
-    this->capacidad=Z;
+    this->capacidad=100;
 }
 
 Camion::Camion(int capacidad, string ub){

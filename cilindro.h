@@ -2,7 +2,6 @@
 #define CILINDRO_H
 #include<iostream>
 #include<deque>
-#define Z 100
 
 using namespace std;
 
