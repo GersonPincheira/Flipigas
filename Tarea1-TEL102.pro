@@ -16,11 +16,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     solicitud.cpp \
     cilindro.cpp \
-    camion.cpp
+    camion.cpp \
+    loginwindows.cpp
 
 HEADERS  += mainwindow.h \
     solicitud.h \
     cilindro.h \
-    camion.h
+    camion.h \
+    loginwindows.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    loginwindows.ui

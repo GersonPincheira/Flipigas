@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "loginwindows.h"
 #include <QApplication>
 
 
@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 {
     srand(time(NULL));
     QApplication a(argc, argv);
-    MainWindow w;
+    LoginWindows w;
     w.setWindowTitle("Nuevas Solicitudes");
     w.show();
 
