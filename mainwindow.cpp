@@ -76,6 +76,16 @@ void MainWindow::on_pushButton_clicked()
         Error.setWindowTitle("Error");
         Error.exec();
     }
+    ui->cerros->setCurrentIndex(0);
+    ui->Mcash->setCurrentIndex(0);
+    int actual =  ui->tableWidget->rowCount();
+    for(actual;actual>=0;actual--){
+        ui->tableWidget->removeRow(actual);
+    }
+    MainWindow::on_pushButton_2_clicked();
+    ui->name_user->clear();
+    ui->rut->clear();
+
 
 }
 
