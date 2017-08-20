@@ -1,0 +1,4 @@
+Catalitico;15;5;Alegre;Cheque;Gerson;187835453;15000
+Catalitico;11;8;Alegre;Cheque;Gerson;187835453;15000
+Catalitico;45;10;Alegre;Cheque;Gerson;187835453;15000
+No Catalitico;15;5;Alegre;Cheque;Gerson;187835453;15000

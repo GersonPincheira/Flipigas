@@ -2,6 +2,7 @@
 #define LOGINWINDOWS_H
 
 #include<mainwindow.h>
+#include<camionwindows.h>
 
 namespace Ui {
 class LoginWindows;
@@ -12,7 +13,7 @@ class LoginWindows : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit LoginWindows(QWidget *parent = 0);
+    explicit LoginWindows(QWidget *parent,deque<Solicitud> *s,deque<Camion> *c);
     ~LoginWindows();
 
 private slots:
@@ -20,6 +21,8 @@ private slots:
 
 private:
     Ui::LoginWindows *ui;
+    deque<Solicitud> *solicitudes;
+    deque<Camion> *camiones;
 };
 
 #endif // LOGINWINDOWS_H

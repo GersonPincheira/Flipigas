@@ -16,6 +16,8 @@ public:
     Cilindro();
     Cilindro(float k,string t);
     int precio();
+    float getkilos();
+    string gettipo();
 };
 
 #endif // CILINDRO_H

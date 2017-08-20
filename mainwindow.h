@@ -11,6 +11,7 @@
 #include <string.h>
 #include <camion.h>
 #include <fstream>
+#include <loginwindows.h>
 
 
 
@@ -23,7 +24,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent,deque<Solicitud> *s,deque<Camion> *c);
     ~MainWindow();
 
 private slots:
@@ -33,6 +34,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    deque<Solicitud> *solicitudes;
+    deque<Camion> *camiones;
 };
 
 #endif // MAINWINDOW_H

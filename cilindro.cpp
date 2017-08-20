@@ -18,3 +18,10 @@ int Cilindro::precio(){
    else return 15000;
 }
 
+float Cilindro::getkilos(){
+    return kilos;
+}
+
+string Cilindro::gettipo(){
+    return tipo;
+}

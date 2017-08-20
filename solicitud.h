@@ -11,10 +11,14 @@ public:
     Solicitud(deque<Cilindro> cilindros,string cerro,string modopago,string nombre_user,string rut,bool entregado,int id,int p);
     ~Solicitud();
     int getID();
+    string getUbicacion();
     float getTiempoDeEntrega();
-
-private:    
+    bool asignado;
+    void setEntregado(bool entregado);
+    bool getentregado();
+    int CantidadDeCilindros();
     deque <Cilindro>pedidos;
+private:
     string ubicacion;
     string MedioPago;
     string user;
@@ -23,6 +27,7 @@ private:
     float TiempoDeEntrega;
     bool flagEntregado;
     int ID;
+
 };
 
 #endif // SOLICITUD_H

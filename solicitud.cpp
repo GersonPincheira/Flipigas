@@ -14,6 +14,7 @@ Solicitud::Solicitud(deque<Cilindro> cilindros, string cerro, string modopago, s
     flagEntregado= entregado;
     TotalPago = p;
     TiempoDeEntrega=10+rand()%31;
+    asignado=0;
 }
 Solicitud::~Solicitud(){}
 int Solicitud::getID()
@@ -21,6 +22,20 @@ int Solicitud::getID()
     return ID;
 }
 
+string Solicitud::getUbicacion(){
+    return ubicacion;
+}
+
 float Solicitud::getTiempoDeEntrega(){
     return TiempoDeEntrega;
+}
+
+int Solicitud::CantidadDeCilindros(){
+    return pedidos.size();
+}
+void Solicitud::setEntregado(bool entregado){
+    flagEntregado=entregado;
+}
+bool Solicitud::getentregado(){
+    return flagEntregado;
 }

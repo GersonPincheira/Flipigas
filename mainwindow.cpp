@@ -1,13 +1,16 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-deque<Solicitud> solicitudes;
 
-MainWindow::MainWindow(QWidget *parent) :
+
+
+MainWindow::MainWindow(QWidget *parent,deque<Solicitud> *s,deque<Camion> *c) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    solicitudes=s;
+    camiones=c;
     QStringList cerritos;
     cerritos <<"Seleccione cerro"<< "Alegre"<< "Barón"<< "Blanco"<< "Bellavista"<< "Concepción"<< "Cordillera"<< "Delicias"<< "El Litre"<< "El Molino"<< "Esperanza"<< "Jiménez"<< "Larraín"<< "La Cruz"<< "La Cárcel"<< "La Florida"<< "La Merced"<< "La Virgen"<< "Las Cañas"<< "Las Jarcias"<< "Las Monjas"<< "Los Placeres"<< "Loceras"<< "Lecheros"<< "Mariposas"<< "Mesilla"<< "Miraflores"<< "O'Higgins"<< "Pajonal"<< "Panteón"<< "Playa Ancha"<< "Perdices"<< "Polanco"<< "Ramaditas"<< "Reina Victoria"<< "Rodelillo"<< "Rocuant"<< "San Juan de Dios"<< "Santo Domingo"<< "San Francisco"<< "Toro"<< "Yungay";
     ui->cerros->addItems(cerritos);
@@ -26,8 +29,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableWidget->setCellWidget(0, 0,combo1);
     ui->tableWidget->setCellWidget(0,1,combo2);
     ui->tableWidget->setCellWidget(0,2,cantidad);
-    if(solicitudes.empty()) ui->id_venta->setText("0001");
-    else ui->id_venta->setText(QString::number(solicitudes.back().getID()+1));
+    if(solicitudes->empty()) ui->id_venta->setText("0001");
+    else ui->id_venta->setText(QString::number(solicitudes->back().getID()+1));
+    LoginWindows *ventana = new LoginWindows(0,solicitudes,camiones);
+    connect(ui->actionCerrar_Sesion,SIGNAL(triggered()),ventana,SLOT(show()));
+    connect(ui->actionCerrar_Sesion,SIGNAL(triggered()),this,SLOT(close()));
 
 
 }
@@ -62,7 +68,7 @@ void MainWindow::on_pushButton_clicked()
         }
         string ID_venta = ui->id_venta->text().toLocal8Bit().constData();
         Solicitud *s = new Solicitud(cilindros,cerro,pago,nombre,rut,0,stoi(ID_venta),precio);
-        solicitudes.push_back(*s);
+        solicitudes->push_back(*s);
         ui->id_venta->setText(QString::number(stoi(ID_venta)+1));
         QMessageBox mensaje;
         mensaje.setWindowTitle(" ");
@@ -77,9 +83,8 @@ void MainWindow::on_pushButton_clicked()
         Error.exec();
     }
     ui->cerros->setCurrentIndex(0);
-    ui->Mcash->setCurrentIndex(0);
-    int actual =  ui->tableWidget->rowCount();
-    for(actual;actual>=0;actual--){
+    ui->Mcash->setCurrentIndex(0);    
+    for(int actual =  ui->tableWidget->rowCount();actual>=0;actual--){
         ui->tableWidget->removeRow(actual);
     }
     MainWindow::on_pushButton_2_clicked();
@@ -107,3 +112,4 @@ void MainWindow::on_pushButton_2_clicked()
     ui->tableWidget->setCellWidget(actual,1,combo2);
     ui->tableWidget->setCellWidget(actual,2,cantidad);
 }
+
