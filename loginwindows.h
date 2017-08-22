@@ -3,6 +3,7 @@
 
 #include<mainwindow.h>
 #include<camionwindows.h>
+#include<adminwindow.h>
 
 namespace Ui {
 class LoginWindows;
