@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     deque<Camion> camiones;
     srand(time(NULL));
     fstream fichero;
-    string archivo="/home/gerson/TAREA1/Tarea1-TEL102/bd.txt";
+    string archivo="/home/pip/seminario/Flipigas/bd.txt";
     string linea;
     string tipo,cerro,mpago,nombre,rut;
     float kilo=0;

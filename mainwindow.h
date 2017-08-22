@@ -12,6 +12,7 @@
 #include <camion.h>
 #include <fstream>
 #include <loginwindows.h>
+#include <inventario.h>
 
 
 

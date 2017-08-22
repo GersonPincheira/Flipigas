@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>905</width>
+    <height>654</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,42 +19,58 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>801</width>
-      <height>561</height>
+      <width>901</width>
+      <height>571</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
       <widget class="QTabWidget" name="tabWidget">
-       <property name="currentIndex">
-        <number>0</number>
+       <property name="cursor">
+        <cursorShape>ArrowCursor</cursorShape>
        </property>
-       <widget class="QWidget" name="Cerros">
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <property name="elideMode">
+        <enum>Qt::ElideNone</enum>
+       </property>
+       <widget class="QWidget" name="SolicitudesActivas">
         <attribute name="title">
-         <string>Cerros</string>
+         <string>SolicitudesActivas</string>
         </attribute>
         <widget class="QTableWidget" name="tableWidget">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>0</x>
            <y>10</y>
-           <width>771</width>
-           <height>421</height>
+           <width>791</width>
+           <height>391</height>
           </rect>
          </property>
          <column>
           <property name="text">
-           <string>Camiones en ruta</string>
+           <string>Cerro</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string>Cilindros cataliticos de 5kg vendidos</string>
+           <string>Tipo</string>
           </property>
          </column>
          <column>
           <property name="text">
-           <string/>
+           <string>Peso</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Cantidad</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Entreagdo</string>
           </property>
          </column>
         </widget>
@@ -63,6 +79,171 @@
         <attribute name="title">
          <string>Centro de Distribucion</string>
         </attribute>
+        <widget class="QTableWidget" name="tableWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>611</width>
+           <height>451</height>
+          </rect>
+         </property>
+         <column>
+          <property name="text">
+           <string>Tipo</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Peso</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Cantidad</string>
+          </property>
+         </column>
+        </widget>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>620</x>
+           <y>20</y>
+           <width>121</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+         <property name="text">
+          <string>Cantidad total de clilndros</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="cantidadCilindrosBox">
+         <property name="geometry">
+          <rect>
+           <x>750</x>
+           <y>60</y>
+           <width>123</width>
+           <height>37</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>cantidad</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_2">
+         <property name="geometry">
+          <rect>
+           <x>620</x>
+           <y>150</y>
+           <width>121</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+         <property name="text">
+          <string>Ventas$</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>620</x>
+           <y>240</y>
+           <width>121</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+         <property name="text">
+          <string>Gastos$</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_4">
+         <property name="geometry">
+          <rect>
+           <x>610</x>
+           <y>340</y>
+           <width>161</width>
+           <height>121</height>
+          </rect>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="lineWidth">
+          <number>3</number>
+         </property>
+         <property name="text">
+          <string>Utilidades$</string>
+         </property>
+         <property name="wordWrap">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QLabel" name="VentasBox">
+         <property name="geometry">
+          <rect>
+           <x>730</x>
+           <y>190</y>
+           <width>161</width>
+           <height>37</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>ventas</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="gastosBox">
+         <property name="geometry">
+          <rect>
+           <x>730</x>
+           <y>280</y>
+           <width>161</width>
+           <height>37</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>gastos</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="utilidadBox">
+         <property name="geometry">
+          <rect>
+           <x>760</x>
+           <y>380</y>
+           <width>131</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>utilidad</string>
+         </property>
+        </widget>
        </widget>
       </widget>
      </item>
@@ -74,7 +255,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>905</width>
      <height>42</height>
     </rect>
    </property>

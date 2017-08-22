@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <mainwindow.h>
+#include <inventario.h>
 
 namespace Ui {
 class AdminWindow;
@@ -20,6 +21,8 @@ private:
     Ui::AdminWindow *ui;
     deque<Solicitud> *solicitudes;
     deque<Camion> *camiones;
+    Camion camion;
+    Inventario invent;
 };
 
 #endif // ADMINWINDOW_H
