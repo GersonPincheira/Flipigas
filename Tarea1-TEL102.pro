@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     camion.cpp \
     loginwindows.cpp \
     camionwindows.cpp \
-    adminwindow.cpp
+    adminwindow.cpp \
+    inventario.cpp
 
 HEADERS  += mainwindow.h \
     solicitud.h \
@@ -27,7 +28,8 @@ HEADERS  += mainwindow.h \
     camion.h \
     loginwindows.h \
     camionwindows.h \
-    adminwindow.h
+    adminwindow.h \
+    inventario.h
 
 FORMS    += mainwindow.ui \
     loginwindows.ui \
